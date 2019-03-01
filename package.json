@@ -24,6 +24,7 @@
     "moment": "^2.24.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
+    "pg": "^7.8.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-star-ratings": "^2.3.0",
