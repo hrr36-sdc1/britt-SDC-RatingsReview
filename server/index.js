@@ -7,9 +7,10 @@ const port = 8003;
 app.use(express.static(__dirname + '/../public'));
 app.use(express.json());
 
-db.authenticate()
-  .then(() => console.log('db connected'))
-  .catch(err => console.log('err:', err))
+// db.authenticate()
+//   .then(() => console.log('db connected'))
+//   .catch(err => console.log('err:', err))
+
 
 app.get('/reviews', (req, res) => {
   Reviews.sync()

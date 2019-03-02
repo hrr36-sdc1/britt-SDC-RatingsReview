@@ -6,7 +6,7 @@ const faker = require("faker"); 
 
 const createFakeProduct = () => {
   return {
-    name: faker.commerce.productName();
+    name: faker.commerce.productName()
   }
 }
 
