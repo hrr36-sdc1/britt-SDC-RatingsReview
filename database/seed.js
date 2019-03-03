@@ -53,33 +53,33 @@ const createFakeProduct = () => {
 
 
 
-// let seedReviews = function(){   
-//   const fakeReviews = [];
-//   const total = 10000;
-//     for (var i = 0; i < total; i++) {
-//       fakeReviews.push(createFakeReview());
-//     }
-
-//     return knex("reviews").insert(fakeReviews) //invoke faker func until i = 50k
-//     .then(function () { 
-
-//   console.log('Seeding batch of 10k review records complete!')
-//   }) 
-// } 
-// seedReviews(); 
-
-let seedProducts = function(){   
-  const fakeProducts = [];
-  const total = 40000;
+let seedReviews = function(){   
+  const fakeReviews = [];
+  const total = 10000;
     for (var i = 0; i < total; i++) {
-      fakeProducts.push(createFakeProduct());
+      fakeReviews.push(createFakeReview());
     }
 
-    return knex("products").insert(fakeProducts) //invoke faker func until i = 50k
+    return knex("reviews").insert(fakeReviews) //invoke faker func until i = 50k
     .then(function () { 
 
-  console.log('Seeding batch of 40k product records complete!')
+  console.log('Seeding batch of 10k review records complete!')
   }) 
 } 
-seedProducts(); 
+
+
+// let seedProducts = function(){   
+//   const fakeProducts = [];
+//   const total = 40000;
+//     for (var i = 0; i < total; i++) {
+//       fakeProducts.push(createFakeProduct());
+//     }
+
+//     return knex("products").insert(fakeProducts) //invoke faker func until i = 50k
+//     .then(function () { 
+
+//   console.log('Seeding batch of 40k product records complete!')
+//   }) 
+// } 
+// seedProducts(); 
 
