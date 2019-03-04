@@ -18,9 +18,11 @@ class App extends React.Component {
   }
 
   get() {
+    let id = Math.floor(Math.random() * 10000000);
+
     $.ajax({
       type: 'GET',
-      url: '/reviews',
+      url: '/reviews/' + id,
       success: (reviews => {
         this.setState({
           reviews: reviews

@@ -66,7 +66,7 @@ let seedReviews = function(){   
   console.log('Seeding batch of 10k review records complete!')
   }) 
 } 
-
+ seedProducts();
 
 // let seedProducts = function(){   
 //   const fakeProducts = [];
