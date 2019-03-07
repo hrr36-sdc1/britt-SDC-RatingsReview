@@ -19,7 +19,6 @@ class App extends React.Component {
 
   get() {
     let id = Math.floor(Math.random() * 10000000);
-
     $.ajax({
       type: 'GET',
       url: '/reviews/' + id,
@@ -35,13 +34,24 @@ class App extends React.Component {
     })
   }
 
-  // axios.get('/reviews')
-  //   .then(function (response) {
-  //     console.log(response)
+
+  // onReviewSubmit(event) {
+  //   $.ajax({
+  //     type: 'POST',
+  //     url:,
+  //     data: {
+
+  //     },
+  //     success: function(results) {
+  //       console.log(results, 'post req success');
+  //     },
+  //     error: function(results) {
+  //       cpnsole.log('error in post req')
+  //     }
   //   })
-  //   .catch(function (err) {
-  //     console.log(err)
-  //   })
+  // }
+
+
 
   render () {
     return (
