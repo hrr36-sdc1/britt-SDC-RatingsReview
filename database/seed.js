@@ -11,29 +11,29 @@ var knex = require("knex")(config[env]); 
 
 
 // function writeFakeData() {
-  //empty the file first
-  // fs.writeFileSync(pathToFile, 'reviewid|help_yes|nickname|date|help_no|rating|review\n');
+//   empty the file first
+//   fs.writeFileSync(pathToFile, 'reviewid|help_yes|nickname|date|help_no|rating|review\n');
 
-  // var chunk = 0;
-  // var agregateQuery = '';
-  // for (var j = 0; j < 5000000; j++) {
-  //   chunk++;
-  //     agregateQuery +=
-  //       Math.floor(Math.random() * (2000000)) + '|' +
-  //       + Math.floor(Math.random()* (40)) + '|' +
-  //       '"' + faker.internet.userName() + '"|' +
-  //       '"' + faker.date.past() + '"|' +
-  //       Math.floor(Math.random()* (40)) + '|' +
-  //       + Math.floor(Math.random() * (5)) + '|' +
-  //       '"' + faker.lorem.sentences() + '"\n'
+//   var chunk = 0;
+//   var agregateQuery = '';
+//   for (var j = 0; j < 5000000; j++) {
+//     chunk++;
+//       agregateQuery +=
+//         Math.floor(Math.random() * (2000000)) + '|' +
+//         + Math.floor(Math.random()* (40)) + '|' +
+//         '"' + faker.internet.userName() + '"|' +
+//         '"' + faker.date.past() + '"|' +
+//         Math.floor(Math.random()* (40)) + '|' +
+//         + Math.floor(Math.random() * (5)) + '|' +
+//         '"' + faker.lorem.sentences() + '"\n'
 
-  //       if (chunk >= 1000) {
-  //         fs.appendFileSync(pathToFile, agregateQuery)
-  //         chunk = 0;
-  //         agregateQuery = '';
-  //       }
-  // }
-  // console.log('seeded')
+//         if (chunk >= 1000) {
+//           fs.appendFileSync(pathToFile, agregateQuery)
+//           chunk = 0;
+//           agregateQuery = '';
+//         }
+//   }
+//   console.log('seeded')
 // }
 // writeFakeData();
 
