@@ -34,8 +34,9 @@ const Reviews = (props) => {
               <span className="review-reply">Reply</span>
               <div className="review-helpful">
                 <span className="review-helpful-text">Was this review helpful?</span>
-                <button className="review-boolean"><u>Yes</u> (0)</button>
-                <button className="review-boolean"><u>No</u> (0)</button>
+                <button className="review-boolean"><u>Yes </u>{review.help_yes}</button>
+                <button className="review-boolean"><u>No </u> (0)</button>
+                <button className="delete helpful">DELETE</button>
               </div>
             </div>
           </div>

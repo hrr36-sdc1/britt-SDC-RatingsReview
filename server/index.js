@@ -12,6 +12,7 @@ var knex = require("knex")(config[env]); 
 app.use(express.static(__dirname + '/../public'));
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // db.authenticate()
 //   .then(() => console.log('db connected'))
@@ -23,7 +24,8 @@ app.get('/reviews/:id', (req, res) => {
 
   return knex
   .from("reviews")
-    .where("id", req.params.id)
+    .where("index", req.params.id)
+    .limit(Math.floor(Math.random() * 6))
     .then(reviews => {
       var totalTime = Date.now() - startTime;
       console.log(`Query returned ${reviews.length} reviews in ${totalTime} ms.`);
@@ -40,6 +42,41 @@ app.get('/reviews/:id', (req, res) => {
   // })
 });
 
+app.post('/postreviews/323', (req, res) => {
+  knex("reviews")
+    .insert({ nickname: req.body.nickname,
+          review: req.body.review,
+          rating: req.body.rating,
+          recommend: req.body.recommend,
+          createdAt: req.body.createdAt,
+          index: req.body.index
+          })
+    .then(reviews => {res.send('POST request to the homepage')});
+})
+
+app.patch('/reviews/1600', function(req, res) {
+  knex("reviews")
+    .increment('help_yes')
+    .where('index', 1600)
+    .then(reviews => {res.send('PATCH request to the homepage')});
+})
+
+app.delete('/reviews/:id', function(req, res) {
+  knex("reviews")
+    .where('id', req.params.id)
+    .del()
+    .then(reviews => {res.send('DELETE request to the homepage')});
+})
+
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 })
+
+
+
+
+
+
+
+
