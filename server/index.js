@@ -15,6 +15,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.all('/*', function(req, res, next) { 
+  res.header("Access-Control-Allow-Origin", "*"); 
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");   next(); 
+}); 
+
 // db.authenticate()
 //   .then(() => console.log('db connected'))
 //   .catch(err => console.log('err:', err))
@@ -43,7 +48,8 @@ app.get('/reviews/:id', (req, res) => {
   // })
 });
 
-app.post('/postreviews/323', (req, res) => {
+app.post('/postreviews/:id', (req, res) => {
+  console.log(req.body)
   knex("reviews")
     .insert({ nickname: req.body.nickname,
           review: req.body.review,
@@ -55,19 +61,19 @@ app.post('/postreviews/323', (req, res) => {
     .then(reviews => {res.send('POST request to the homepage')});
 })
 
-app.patch('/reviews/1600', function(req, res) {
-  knex("reviews")
-    .increment('help_yes')
-    .where('index', 1600)
-    .then(reviews => {res.send('PATCH request to the homepage')});
-})
+// app.patch('/reviews/1600', function(req, res) {
+//   knex("reviews")
+//     .increment('help_yes')
+//     .where('index', 1600)
+//     .then(reviews => {res.send('PATCH request to the homepage')});
+// })
 
-app.delete('/reviews/:id', function(req, res) {
-  knex("reviews")
-    .where('id', req.params.id)
-    .del()
-    .then(reviews => {res.send('DELETE request to the homepage')});
-})
+// app.delete('/reviews/:id', function(req, res) {
+//   knex("reviews")
+//     .where('id', req.params.id)
+//     .del()
+//     .then(reviews => {res.send('DELETE request to the homepage')});
+// })
 
 
 app.listen(port, () => {

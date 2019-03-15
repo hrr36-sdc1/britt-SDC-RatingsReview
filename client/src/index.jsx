@@ -39,16 +39,17 @@ class App extends React.Component {
 
 
   onReviewSubmit() {
+    let id = 7;
     $.ajax({
       type: 'POST',
-      url: '/postreviews/323',
+      url: '/postreviews/' + id,
       data: {
         nickname: "bzanetis",
         review: "These are the best running shoes. But running is awful.",
         rating: 4,
         recommend: "yes",
         createdAt: "2018-12-04T06:00:00.000Z",
-        index: 323
+        index: 7
 
       },
       success: function(results) {
